@@ -23,10 +23,10 @@ public class CameraReset : MonoBehaviour
     {
         if (freeLookCamera != null)
         {
-            // Get the TransitionDestination direction in degrees
+            // Get the TransitionDestination rotation value
             float playerFacingAngle = transform.eulerAngles.y;
 
-            // Set the camera's horizontal axis to match
+            // Set the camera's horizontal axis to match the rotation value
             freeLookCamera.m_XAxis.Value = playerFacingAngle;
 
             //Debug.Log("Camera reset");

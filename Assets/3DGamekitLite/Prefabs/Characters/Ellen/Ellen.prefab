@@ -15655,7 +15655,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea9dfe00ad5fa4db7857a85c2f5009f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gamekit3D.InventoryController
-  inventoryEvents: []
+  inventoryEvents:
+  - key: Key_01
+    OnAdd:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRemove:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Key_02
+    OnAdd:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRemove:
+      m_PersistentCalls:
+        m_Calls: []
+  - key: Key_03
+    OnAdd:
+      m_PersistentCalls:
+        m_Calls: []
+    OnRemove:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1991646998098166
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,19 +38,51 @@ namespace Gamekit3D
                 RectTransform healthIconRect = healthIcon.transform as RectTransform;
                 healthIconRect.anchoredPosition = Vector2.zero;
                 healthIconRect.sizeDelta = Vector2.zero;
-                healthIconRect.anchorMin -= new Vector2(k_KeyIconAnchorWidth, 0f) * i;
-                healthIconRect.anchorMax -= new Vector2(k_KeyIconAnchorWidth, 0f) * i;
+                healthIconRect.anchorMin += new Vector2(k_KeyIconAnchorWidth, 0f) * i;
+                healthIconRect.anchorMax += new Vector2(k_KeyIconAnchorWidth, 0f) * i;
                 m_KeyIconAnimators[i] = healthIcon.GetComponent<Animator>();
             }
 
-            
+            InventoryController inventory = FindFirstObjectByType<InventoryController>();
+            if (inventory != null)
+                ChangeKeyUI(inventory);
         }
 
         public void ChangeKeyUI(InventoryController controller)
         {
+            if (controller == null)
+            {
+                Debug.LogError("KeyUI: InventoryController reference is missing.");
+                return;
+            }
+
+            // Ensure the key icons have been created before updating them.
+            if (m_KeyIconAnimators == null ||
+                m_KeyIconAnimators.Length != keyNames.Length)
+            {
+                SetInitialKeyCount();
+            }
+
+            if (m_KeyIconAnimators == null ||
+                m_KeyIconAnimators.Length != keyNames.Length)
+            {
+                Debug.LogError(
+                    "KeyUI: The number of key icon animators doesn't match keyNames. " +
+                    "Check the Key Icon Prefab and Key Names in the Inspector.");
+                return;
+            }
+
             for (int i = 0; i < keyNames.Length; i++)
             {
-                m_KeyIconAnimators[i].SetBool(m_HashActivePara, controller.HasItem(keyNames[i]));
+                if (m_KeyIconAnimators[i] == null)
+                {
+                    Debug.LogError($"KeyUI: Icon animator {i} is missing.");
+                    continue;
+                }
+                Debug.Log($"Key {keyNames[i]}: {controller.HasItem(keyNames[i])}");
+                m_KeyIconAnimators[i].SetBool(
+                    m_HashActivePara,
+                    controller.HasItem(keyNames[i]));
             }
         }
     }

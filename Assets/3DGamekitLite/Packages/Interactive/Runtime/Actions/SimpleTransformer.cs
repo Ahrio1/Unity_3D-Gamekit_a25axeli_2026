@@ -18,8 +18,7 @@ namespace Gamekit3D.GameCommands
 
         public bool activate = false;
         public SendGameCommand OnStartCommand, OnStopCommand;
-
-        public GameObject onStartAudio, onEndAudio;
+        
 
         [Range(0, 1)]
         public float previewPosition;
@@ -28,12 +27,7 @@ namespace Gamekit3D.GameCommands
         float direction = 1f;
 
         protected Platform m_Platform;
-
-        [ContextMenu("Test Start Audio")]
-        void TestPlayAudio()
-        {
-            //if (onStartAudio != null) onStartAudio.Play();
-        }
+        
 
         protected override void Awake()
         {
@@ -46,7 +40,6 @@ namespace Gamekit3D.GameCommands
         {
             activate = true;
             if (OnStartCommand != null) OnStartCommand.Send();
-            //if (onStartAudio != null) onStartAudio.Play();
         }
 
         public void FixedUpdate()

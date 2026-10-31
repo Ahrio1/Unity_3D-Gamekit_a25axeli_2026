@@ -39,21 +39,23 @@ namespace Gamekit3D
                 return false;
             }
         }
-
-
+        
         public InventoryEvent[] inventoryEvents;
-
-        //HashSet<string> inventoryItems = new HashSet<string>();
-        private static HashSet<string> inventoryItems 
-            = new HashSet<string>();
+        private static HashSet<string> inventoryItems = new HashSet<string>();
 
         public void AddItem(string key)
         {
             if (!inventoryItems.Contains(key))
             {
-                var ev = GetInventoryEvent(key);
-                if (ev != null) ev.OnAdd.Invoke();
                 inventoryItems.Add(key);
+
+                var ev = GetInventoryEvent(key);
+                if (ev != null)
+                    ev.OnAdd.Invoke();
+
+                if (KeyUI.Instance != null)
+                    KeyUI.Instance.ChangeKeyUI(this);
+
                 Debug.Log("Inventory now contains " + inventoryItems.Count + " unique items.");
             }
         }
@@ -65,6 +67,8 @@ namespace Gamekit3D
                 var ev = GetInventoryEvent(key);
                 if (ev != null) ev.OnRemove.Invoke();
                 inventoryItems.Remove(key);
+                if (KeyUI.Instance != null)
+                    KeyUI.Instance.ChangeKeyUI(this);
             }
         }
 
@@ -76,6 +80,8 @@ namespace Gamekit3D
         public void Clear()
         {
             inventoryItems.Clear();
+            if (KeyUI.Instance != null)
+                KeyUI.Instance.ChangeKeyUI(this);
         }
 
         InventoryEvent GetInventoryEvent(string key)

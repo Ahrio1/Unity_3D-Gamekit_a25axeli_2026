@@ -96,7 +96,7 @@ namespace Gamekit3D
 
         protected SceneTransitionDestination GetDestination(SceneTransitionDestination.DestinationTag destinationTag)
         {
-            SceneTransitionDestination[] entrances = FindObjectsOfType<SceneTransitionDestination>();
+            SceneTransitionDestination[] entrances = FindObjectsByType<SceneTransitionDestination>(FindObjectsSortMode.None);
             for (int i = 0; i < entrances.Length; i++)
             {
                 if (entrances[i].destinationTag == destinationTag)

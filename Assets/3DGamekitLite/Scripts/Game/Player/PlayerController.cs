@@ -24,7 +24,7 @@ namespace Gamekit3D
 
         public CameraSettings cameraSettings;            // Reference used to determine the camera's direction.
         public MeleeWeapon meleeWeapon;                  // Reference used to (de)activate the staff when attacking. 
-        public GameObject footstepSource;         // Random Audio Players used for various situations.
+        public GameObject footstepSource;                // Reference to GameObjects which can be used to play audio from, needs to be assigned in the Inspector
         public GameObject voiceSource;
 
 
@@ -114,7 +114,7 @@ namespace Gamekit3D
             Transform footStepSource = transform.Find("FootstepSource");
             Transform voiceSource = transform.Find("VoiceSource");
 
-            cameraSettings = FindObjectOfType<CameraSettings>();
+            cameraSettings = FindFirstObjectByType<CameraSettings>();
 
             if (cameraSettings != null)
             {

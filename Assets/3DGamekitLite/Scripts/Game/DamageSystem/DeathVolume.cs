@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Gamekit3D
 {
     [RequireComponent(typeof(Collider))]
     public class DeathVolume : MonoBehaviour
     {
-        public new AudioSource audio;
+        public new GameObject audioObject;
 
 
         void OnTriggerEnter(Collider other)
@@ -17,11 +18,9 @@ namespace Gamekit3D
             {
                 pc.Die(new Damageable.DamageMessage());
             }
-            if (audio != null)
+            if (audioObject != null)
             {
-                audio.transform.position = other.transform.position;
-                if (!audio.isPlaying)
-                    audio.Play();
+                audioObject.transform.position = other.transform.position;
             }
             
             //Checks if the GameObject is an enemy and kills it!

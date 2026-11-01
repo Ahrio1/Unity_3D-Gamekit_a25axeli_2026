@@ -23,8 +23,8 @@ namespace Gamekit3D
         [Tooltip("Will the explosion VFX play where the grenade explode or on the closest ground")]
         public bool vfxOnGround = false;
 
-        public RandomAudioPlayer explosionPlayer;
-        public RandomAudioPlayer bouncePlayer;
+        public GameObject explosionObject;
+        public GameObject bounceObject;
 
         protected float m_SinceFired;
 
@@ -86,10 +86,10 @@ namespace Gamekit3D
 
         public void Explosion()
         {
-            if (explosionPlayer)
+            if (explosionObject)
             {
-                explosionPlayer.transform.SetParent(null);
-                explosionPlayer.PlayRandomClip();
+                explosionObject.transform.SetParent(null);
+                //explosionPlayer.PlayRandomClip();
             }
 
             int count = Physics.OverlapSphereNonAlloc(transform.position, explosionRadius, m_ExplosionHitCache,
@@ -136,8 +136,9 @@ namespace Gamekit3D
 
         protected virtual void OnCollisionEnter(Collision other)
         {
-            if (bouncePlayer != null)
-                bouncePlayer.PlayRandomClip();
+            if (bounceObject != null)
+                return;
+            //bouncePlayer.PlayRandomClip();
         }
 
         private Vector3 GetVelocity(Vector3 target)

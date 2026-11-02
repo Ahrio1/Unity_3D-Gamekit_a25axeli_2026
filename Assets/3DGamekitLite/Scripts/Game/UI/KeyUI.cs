@@ -79,7 +79,6 @@ namespace Gamekit3D
                     Debug.LogError($"KeyUI: Icon animator {i} is missing.");
                     continue;
                 }
-                Debug.Log($"Key {keyNames[i]}: {controller.HasItem(keyNames[i])}");
                 m_KeyIconAnimators[i].SetBool(
                     m_HashActivePara,
                     controller.HasItem(keyNames[i]));

@@ -56,6 +56,11 @@ namespace Gamekit3D
                 }
             }
         }
+        public void SetCurrentHitPoints(int hitPoints)
+        {
+            currentHitPoints = Mathf.Clamp(hitPoints, 0, maxHitPoints);
+            OnResetDamage.Invoke();
+        }
 
         public void ResetDamage()
         {

@@ -8,8 +8,7 @@ namespace Gamekit3D
     [RequireComponent(typeof(Collider))]
     public class DeathVolume : MonoBehaviour
     {
-        public new GameObject audioObject;
-
+        public GameObject audioObject;
 
         void OnTriggerEnter(Collider other)
         {

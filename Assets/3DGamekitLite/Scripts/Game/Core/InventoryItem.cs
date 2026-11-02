@@ -13,8 +13,7 @@ namespace Gamekit3D
 
         [HideInInspector]
         new public Collider collider;
-
-        public AudioClip clip;
+        
         public DataSettings dataSettings;
 
         void OnEnable()
@@ -35,39 +34,19 @@ namespace Gamekit3D
             collider.isTrigger = true;
             dataSettings = new DataSettings();
         }
-
-        /*void OnTriggerEnter(Collider other)
-        {
-            if (layers.Contains(other.gameObject))
-            {
-                var ic = other.GetComponent<InventoryController>();
-                ic.AddItem(inventoryKey);
-                if (disableOnEnter)
-                {
-                    gameObject.SetActive(false);
-                    Save();
-                }
-
-                if (clip) AudioSource.PlayClipAtPoint(clip, transform.position);
-
-            }
-        }*/
         
         void OnTriggerEnter(Collider other)
         {
             if (!layers.Contains(other.gameObject))
                 return;
 
-            Debug.Log("InventoryItem: Triggered by " + other.name);
+            //Debug.Log("InventoryItem: Triggered by " + other.name);
 
             var ic = other.GetComponent<InventoryController>();
 
             if (ic == null)
             {
-                Debug.LogError(
-                    "InventoryItem: No InventoryController found on " +
-                    other.name
-                );
+                Debug.LogError("InventoryItem: No InventoryController found on " + other.name);
                 return;
             }
 
@@ -75,19 +54,13 @@ namespace Gamekit3D
 
             ic.AddItem(inventoryKey);
 
-            Debug.Log(
-                "Key added. HasItem result: " +
-                ic.HasItem(inventoryKey)
-            );
+            //Debug.Log("Key added. HasItem result: " + ic.HasItem(inventoryKey));
 
             if (disableOnEnter)
             {
                 gameObject.SetActive(false);
                 Save();
             }
-
-            if (clip)
-                AudioSource.PlayClipAtPoint(clip, transform.position);
         }
 
         public void Save()

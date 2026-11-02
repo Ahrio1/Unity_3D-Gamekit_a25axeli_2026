@@ -56,7 +56,7 @@ namespace Gamekit3D
                 if (KeyUI.Instance != null)
                     KeyUI.Instance.ChangeKeyUI(this);
 
-                Debug.Log("Inventory now contains " + inventoryItems.Count + " unique items.");
+                //Debug.Log("Inventory now contains " + inventoryItems.Count + " unique items.");
             }
         }
 

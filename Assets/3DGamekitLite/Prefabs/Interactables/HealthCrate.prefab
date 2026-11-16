@@ -4943,7 +4943,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 82a7b841a67e01c4ebb2e73662c7d17f, type: 2}
-  - {fileID: 2100000, guid: fff934583a5bbd74d88f71ba52a91af8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -24835,6 +24834,18 @@ MonoBehaviour:
           type: 3}
         m_TargetAssemblyTypeName: Gamekit3D.Damageable, Assembly-CSharp
         m_MethodName: ResetDamage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 70cf100203c8d994d9264aedb9f7efec, type: 2}
+        m_TargetAssemblyTypeName: Interactabale, Assembly-CSharp
+        m_MethodName: pickUpHealthPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

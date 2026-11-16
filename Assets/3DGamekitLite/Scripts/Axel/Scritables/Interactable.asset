@@ -10,12 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d6ffce6971cb9e478e42d4e6f0aa3d3, type: 3}
-  m_Name: Interactabale
+  m_Name: Interactable
   m_EditorClassIdentifier: Assembly-CSharp::Interactabale
-  pickUpHealth:
+  pickUpHealthAudio:
     Guid:
       Data1: 268111900
       Data2: 1287762423
       Data3: 208734113
       Data4: -494293583
     Path: event:/Test
+  boxDestroyAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  doorAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  switchAudio:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

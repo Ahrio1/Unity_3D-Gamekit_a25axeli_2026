@@ -35,8 +35,8 @@ MonoBehaviour:
     Path: 
   switchAudio:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -211812642
+      Data2: 1154051483
+      Data3: -1742487662
+      Data4: -333820855
+    Path: event:/Sounds/SFX/Interacetables/Switch/Switch_Turn_On

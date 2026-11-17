@@ -27,7 +27,9 @@ namespace Gamekit3D.GameCommands
         float direction = 1f;
 
         protected Platform m_Platform;
-        
+
+        //start eventinstance 
+        //private EventInstance eventInstance;
 
         protected override void Awake()
         {

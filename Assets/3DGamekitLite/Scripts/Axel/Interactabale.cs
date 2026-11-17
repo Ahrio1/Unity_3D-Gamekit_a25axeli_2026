@@ -13,9 +13,10 @@ public class Interactabale : ScriptableObject
     {
         RuntimeManager.PlayOneShot(pickUpHealthAudio); 
     }
-
-    public void boxDestroyPlay()
+    
+    //Declares a method that should play the pickUpHealthAudio sound without 3D-positioning
+    public void boxDestroyPlay(Transform objectTransfrom)
     {
-        RuntimeManager.PlayOneShot(boxDestroyAudio);
+        RuntimeManager.PlayOneShot(boxDestroyAudio,  objectTransfrom .position);
     }
 }

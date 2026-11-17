@@ -36,10 +36,12 @@ namespace Gamekit3D.GameCommands
             m_Platform = GetComponentInChildren<Platform>();
         }
 
+        //door start opening
         public override void PerformInteraction()
         {
             activate = true;
             if (OnStartCommand != null) OnStartCommand.Send();
+            Debug.Log("door open");
         }
 
         public void FixedUpdate()
@@ -78,9 +80,11 @@ namespace Gamekit3D.GameCommands
             position = Mathf.Repeat(time, 1f);
         }
 
+        // door stops at this point
         void LoopOnce()
         {
             position = Mathf.Clamp01(time);
+
             if (position >= 1)
             {
                 enabled = false;

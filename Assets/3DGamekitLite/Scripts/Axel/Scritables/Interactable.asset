@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactabale
   pickUpHealthAudio:
     Guid:
-      Data1: 268111900
-      Data2: 1287762423
-      Data3: 208734113
-      Data4: -494293583
-    Path: event:/Test
+      Data1: -504066467
+      Data2: 1245910192
+      Data3: -1435436105
+      Data4: -1948660366
+    Path: event:/Sounds/SFX/Interacetables/Rock/Rock_Box_HealthPickUp
   boxDestroyAudio:
     Guid:
       Data1: -524339360

@@ -24846,10 +24846,10 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: 70cf100203c8d994d9264aedb9f7efec, type: 2}
         m_TargetAssemblyTypeName: Interactabale, Assembly-CSharp
         m_MethodName: pickUpHealthPlay
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 4576257875869336}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
